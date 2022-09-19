@@ -2,17 +2,29 @@ import Link from "next/link";
 import { useAppContext } from "./stateWrapper";
 import style from "../styles/menu.module.css";
 
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { userAgent } from "next/server";
+import { useEffect, useState } from "react";
 
 export default function Menu() {
   const cart = useAppContext();
+  const { data: session, status } = useSession();
 
   function handleOpenCart() {
     cart.openCart();
   }
 
-  const { data: session, status } = useSession();
+  const [sesion, setSesion] = useState("Iniciar Sesion");
+
+  const cambiarSesion = () => {
+    if (status !== "loading" && status === "authenticated") {
+      setSesion(session.user.name);
+    }
+  };
+
+  useEffect(() => {
+    cambiarSesion();
+  }, [status]);
 
   return (
     <nav className={style.menu}>
@@ -36,8 +48,17 @@ export default function Menu() {
         </a>
 
         <Link href="/login">
-          <a className={style.link}>Sign In</a>
+          <a className={style.link}>{sesion}</a>
         </Link>
+
+        {/* <button
+          className={style.link}
+          onClick={() => {
+            signOut();
+          }}
+        >
+          signOut
+        </button> */}
       </div>
     </nav>
   );
