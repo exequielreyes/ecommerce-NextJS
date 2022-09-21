@@ -10,6 +10,7 @@
 
 .menu > div {
     display: flex;
+    margin-right: 215px;
 }
 
 .link{
@@ -20,4 +21,10 @@
 .link:hover{
     background-color: rgb(38, 111,180);
     color: white;
+}
+
+
+.cart{
+    color: blue !important;
+    font-size: 80px !important;
 }

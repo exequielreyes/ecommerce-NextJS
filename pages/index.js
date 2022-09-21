@@ -6,11 +6,16 @@ import Layout from '../components/layout'
 import { getLatestItems } from '../services/itemService'
 import Product from '../components/product'
 import styleProduct from "../styles/product.module.css"
+import Herosection from "./herosection";
+
 
 export default function Home({items}) {
   return (
+<>
+     
+
     <Layout> 
-      <div className={styles.banner}>
+      {/* <div className={styles.banner}>
 
         <div className={styles.bannerBackground}>  
         
@@ -24,7 +29,9 @@ export default function Home({items}) {
         </div>
         
         </div>
-      </div>
+      </div> */}
+
+    <Herosection />
 
       <h3>Latest Products</h3>
         <div className={styleProduct.items}>
@@ -34,7 +41,7 @@ export default function Home({items}) {
         </div>
 
     </Layout>
-      
+    </>    
   )
 }
 
