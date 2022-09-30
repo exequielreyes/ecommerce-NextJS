@@ -26,6 +26,14 @@ export default function Login() {
         >
           Sing In with GitHub
         </button>
+        <button
+          className={style.button}
+          onClick={() => {
+            signIn("google");
+          }}
+        >
+          Sing In with Google
+        </button>
       </div>
     </Layout>
   );

@@ -15,10 +15,13 @@ export default function Menu() {
   }
 
   const [sesion, setSesion] = useState("Iniciar Sesion");
+  const [logot, setLogot] = useState("{style.link}");
+
 
   const cambiarSesion = () => {
     if (status !== "loading" && status === "authenticated") {
       setSesion(session.user.name);
+      setLogot("{style.prueba}")
     }
   };
 
@@ -51,14 +54,14 @@ export default function Menu() {
           <a className={style.link}>{sesion}</a>
         </Link>
 
-        {/* <button
-          className={style.link}
+         <button
+          className={logot}
           onClick={() => {
             signOut();
           }}
         >
           signOut
-        </button> */}
+        </button>
       </div>
     </nav>
   );
