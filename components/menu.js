@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useAppContext } from "./stateWrapper"; 
-import style from '../styles/menu.module.css';
+// import style from '../styles/menu.module.css';
 import Search from '../components/search';
 import Image from "next/image";
 import Logo from "../public/img/ME-shop-logo2.png"
@@ -20,10 +20,13 @@ export default function Menu() {
   }
 
   const [sesion, setSesion] = useState("Iniciar Sesion");
+  const [logot, setLogot] = useState("{style.link}");
+
 
   const cambiarSesion = () => {
     if (status !== "loading" && status === "authenticated") {
       setSesion(session.user.name);
+      setLogot("{style.prueba}")
     }
   };
 
@@ -35,7 +38,7 @@ export default function Menu() {
         <nav className="navigation">
             <Link href="/">
             <a className="brand-name">
-                <Image src={Logo} width={120} height={50} className={style.image} />
+                <Image src={Logo} width={120} height={50}  />
             </a> 
             </Link>
           
@@ -108,17 +111,17 @@ export default function Menu() {
             </a> */}
 
           <Link href="/login">
-          <a className={style.link}>{sesion}</a>
+          <a className="title">{sesion}</a>
           </Link>
 
-        {/* <button
-          className={style.link}
+         <button
+          className={logot}
           onClick={() => {
             signOut();
           }}
         >
-          signOut
-        </button> */}
+          Cerrar Sesion
+        </button>
       </div>
     </nav>
   );

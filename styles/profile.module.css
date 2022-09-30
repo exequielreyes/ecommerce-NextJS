@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.info{
+    margin-left: 20px;
+    background-color: red;  
+}
