@@ -6,50 +6,120 @@ import Image from "next/image";
 import Logo from "../public/img/ME-shop-logo2.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+import { signIn, signOut, useSession } from "next-auth/react";
+import { userAgent } from "next/server";
+import { useEffect, useState } from "react";
+
 
 export default function Menu() {
+  const cart = useAppContext();
+  const { data: session, status } = useSession();
 
-    const cart = useAppContext();
+  function handleOpenCart() {
+    cart.openCart();
+  }
 
-    function handleOpenCart(){
-        cart.openCart();
+  const [sesion, setSesion] = useState("Iniciar Sesion");
+
+  const cambiarSesion = () => {
+    if (status !== "loading" && status === "authenticated") {
+      setSesion(session.user.name);
     }
+  };
+
+  useEffect(() => {
+    cambiarSesion();
+  }, [status]);
 
     return(
-        <nav className={style.menu}>
-            
+        <nav className="navigation">
+            <Link href="/">
+            <a className="brand-name">
                 <Image src={Logo} width={120} height={50} className={style.image} />
-            
-            <div>
-
-            <Link href="/" >
-                <a className={style.link}>Home</a>
+            </a> 
             </Link>
+          
 
-            <Link href="/store">
-                <a className={style.link}>Store</a>
-            </Link>
+            <button className="hamburger">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="white"
+              >
+              <path
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              />
+              </svg>
+            </button>
+                
+  
+          <div className="navigation-menu">
 
-            <Link href="/faq">
-                <a className={style.link}>FAQ</a>
-            </Link>
+            <ul>
+
+                <li className="active">
+                  <Link href="/">
+                    <a className="title">Inicio</a>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/faq">
+                      <a className="title">FAQ</a>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="/store">
+                    <a className="title">Todos los productos</a>
+                  </Link>
+                </li>
+            </ul>
 
             </div>
 
-
-            <div>
+              <div className="search">
                 <Search />
-            </div>
+              </div>
 
-            <div> 
-                <a href="#" className={style.link}  onClick={handleOpenCart}> 
-                <FontAwesomeIcon icon={faShoppingCart} className={style.cart}   /> 
+              <div className="cart"> 
+
+                <div className="logo-cart">
+                <FontAwesomeIcon icon={faShoppingCart} className="icon" /> 
+                </div>
+                <div className="number-cart">
+                <a href="#"   onClick={handleOpenCart}> 
                 ({cart.getNumberOfItems()}) </a>
                 
-            </div>
+                </div>
+                 
+              </div>
+                 
 
+        
+         
 
+           <div> 
+            {/* <a href="#" className={style.link} onClick={handleOpenCart}>
+            Cart ({cart.getNumberOfItems()}){" "}
+            </a> */}
 
-        </nav>
-    )
+          <Link href="/login">
+          <a className={style.link}>{sesion}</a>
+          </Link>
+
+        {/* <button
+          className={style.link}
+          onClick={() => {
+            signOut();
+          }}
+        >
+          signOut
+        </button> */}
+      </div>
+    </nav>
+  );
 }

@@ -1,21 +1,21 @@
-.menu{
-    background-color: white;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0,0, 0, 0.4);
-    justify-content: space-around;
-    color: black;
-}
+/* .menu {
+  background-color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  justify-content: space-around;
+  color: black;
+} */
 
-.menu > div {
+/* .menu > div {
     display: flex;
     margin-right: 215px;
 }
 
-.link{
-    display: block;
-    padding: 20px 15px;
+.link {
+  display: block;
+  padding: 20px 15px;
 }
 
 .link:hover{
@@ -27,4 +27,4 @@
 .cart{
     color: blue !important;
     font-size: 80px !important;
-}
+} */

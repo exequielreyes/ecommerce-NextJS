@@ -9,7 +9,7 @@ import styleProduct from "../styles/product.module.css"
 import Herosection from "./herosection";
 
 
-export default function Home({items}) {
+export default function Home({ items }) {
   return (
 <>
      
@@ -34,24 +34,23 @@ export default function Home({items}) {
     <Herosection />
 
       <h3>Latest Products</h3>
-        <div className={styleProduct.items}>
-          {items && items.map((item) => (
-              <Product key={item.id} item={item} showAs="item" />
-            ))}
-        </div>
-
+      <div className={styleProduct.items}>
+        {items &&
+          items.map((item) => (
+            <Product key={item.id} item={item} showAs="item" />
+          ))}
+      </div>
     </Layout>
     </>    
   )
 }
 
-
 export async function getStaticProps() {
   const res = await getLatestItems();
 
-  return{
+  return {
     props: {
       items: res,
-    }
-  }
+    },
+  };
 }

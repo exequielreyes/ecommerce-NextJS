@@ -66,7 +66,7 @@ const AutocompleteItem = ({ id, title, image, price }) => {
     return(
         <form ref={formRef}  className="flex justify-center items-center " {...formProps} >
             <div className="flex relative p-1  bg-gradient-to-tr from-gray-600 to-ligthgray-300 rounded-full   ml-70  h-12 ">
-                <input ref={inputRef}   className='flex-1 p-2 pl-4 rounded-full  w-96 '   {...inputProps} />
+                <input ref={inputRef}   className='flex-1 p-2 pl-4 rounded-full w-96'   {...inputProps} />
             
                 {
         autocompleteState.isOpen && (
