@@ -2,13 +2,14 @@
 import { createAutocomplete } from '@algolia/autocomplete-core'
 import { useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import { convertToPath } from '../lib/utils'
 
 
 
-const AutocompleteItem = ({ id, title, image, price }) => {
+const AutocompleteItem = ({title, image, price }) => {
     return (
       <li>
-        <Link href={`/store/${id}`}>
+        <Link href={`/store/${convertToPath(title)}`}>
           <a className="hover:bg-blue-300 flex gap-4 p-4">
             <img src={image} alt={title} className='w-12 h-12 object-contain' height={100} width={100} />
             <div>
