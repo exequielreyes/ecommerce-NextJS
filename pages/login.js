@@ -11,7 +11,6 @@ export default function Login() {
   // const [login, setLogin] = useState("signIn");
 
   if (status !== "loading" && status === "authenticated") {
-    // setLogin("Leo");
     router.push("/");
   }
 
