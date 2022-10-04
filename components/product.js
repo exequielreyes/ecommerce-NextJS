@@ -88,6 +88,7 @@ export default function Product({ item, showAs, qty}){
 
   return (
     <div className={style.item}>
+        <div className={style.categoryProduct}>{item.category} </div>
       <div className={style.imgCart}>
         {/* <Link href={`/store/${item.id}`} > */}
         <Link href={`/store/${convertToPath(item.title)}`}>
