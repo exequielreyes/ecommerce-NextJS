@@ -57,12 +57,12 @@ export default function Product({ item, showAs, qty}){
   if (showAs === "ListItem") {
     return (
       <div className={style.listItem}>
-        <div>
+        <div className={style.imgItem}>
           <Image
             src={item.image}
             alt={item.description}
-            width={100}
-            height={100}
+            width="100px"
+            height="100px"
           />
         </div>
         <div>
@@ -71,7 +71,7 @@ export default function Product({ item, showAs, qty}){
           </h4>
           <div>{item.price}</div>
 
-          {qty === 0 ? "" : <div>{qty} units </div>}
+          {qty === 0 ? "" : <div>{qty} Unidad </div>}
           {qty === 0 ? "" : <div>Subtotal: ${qty * item.price}</div>}
 
           <button 

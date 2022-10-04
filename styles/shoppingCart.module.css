@@ -42,4 +42,30 @@
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
   }
+
+.containerButton{
+    margin-top: 20px; 
+}
+
+
+.buttonCompra {
+    background-color: #3483fa;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;  
+  }
+
+.buttonCompra:hover{
+    background-color: #3483fac2;
+}
+
+.containerButton Link .buttonCompra{
+    width: 100% !important;
+}

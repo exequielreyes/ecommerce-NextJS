@@ -116,6 +116,12 @@ justify-content: center !important;
     position: relative;
   }
 
+  .imgItem span{
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+
 .eliminar{
     all: unset;
     position: absolute;
