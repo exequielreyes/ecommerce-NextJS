@@ -2,6 +2,8 @@ import Head from 'next/head';
 import style from '../styles/layout.module.css';
 import Menu from './menu';
 import ShoppingCart from './shoppingCart';
+import Footer from '../components/Footer'
+
 
 
 export default function Layout({children, title}) {
@@ -20,6 +22,7 @@ export default function Layout({children, title}) {
 
             <div className={style.container}>{children}</div>
             <ShoppingCart />
+            <Footer /> 
             
        </div> 
     )

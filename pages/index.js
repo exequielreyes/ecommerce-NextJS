@@ -9,6 +9,7 @@ import styleProduct from "../styles/product.module.css"
 import Herosection from "./herosection";
 
 
+
 export default function Home({ items }) {
   return (
 <>
@@ -33,7 +34,13 @@ export default function Home({ items }) {
 
     <Herosection />
 
-      <h3>Latest Products</h3>
+      <div className={styleProduct.contenedorNombre}>
+      <h3 className={styleProduct.name}>Tendencias</h3>
+        <Link href="/store" >
+          <a className={styleProduct.nameLink}>Ver todos</a>
+        </Link>
+      </div>
+      
       <div className={styleProduct.items}>
         {items &&
           items.map((item) => (
@@ -41,6 +48,8 @@ export default function Home({ items }) {
           ))}
       </div>
     </Layout>
+            
+
     </>    
   )
 }

@@ -73,7 +73,7 @@ export default function Menu() {
 
           <li>
             <Link href="/faq">
-              <a className="title">FAQ</a>
+              <a className="title">Nosotros</a>
             </Link>
           </li>
 

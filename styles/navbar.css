@@ -79,6 +79,15 @@ li.active,
   width: 33em !important;
 }
 
+.rounded-full{
+border-radius: 15px !important;
+
+}
+
+.bg-gradient-to-tr{
+border: 1px !important;
+}
+
 .cart {
   /* display: flex;
     justify-content: center;
@@ -93,27 +102,33 @@ li.active,
 /* .cart a{
     margin-left: 20px;   
 } */
-.logo-cart {
-  background-color: #ee456a;
-}
+
 .logo-cart .icon {
-  /* background-color: aqua; */
-  /* font-size: 15px !important; */
+  
   position: absolute;
   left: 0;
   /* top: 0; */
   bottom: 0;
   /* right: 0; */
+  color: #333;
 }
 
 .number-cart {
   /* background-color: blueviolet; */
-  color: black;
+  
   position: absolute;
   top: 0;
   right: 0;
   width: 35px !important;
+  color: #ee456a;
+    font-weight: 900;
 }
+
+
+.number-cart a:before{
+  content: "" !important;
+} 
+
 
 .fa-cart-shopping {
   /* font-size: 14px !important; */
