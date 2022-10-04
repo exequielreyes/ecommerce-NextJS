@@ -1,34 +1,32 @@
 import Layout from "../components/layout";
-import { signIn, useSession } from "next-auth/react";
+import { getSession, signIn, useSession } from "next-auth/react";
 import { Router, useRouter } from "next/router";
 import style from "../styles/profile.module.css";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 
-export default function Profile() {
+export default function Profile({session}) {
   
-  const { data: session, status } = useSession();
-   const router = useRouter();
-  const [name, setName] = useState("Nombre");
-  const [image, setImage] = useState();
-  const [email, setEmail] = useState("Email");
+  // const { data: session, status } = useSession();
+  //  const router = useRouter();
+  // const [name, setName] = useState("Nombre");
+  // const [image, setImage] = useState();
+  // const [email, setEmail] = useState("Email");
 
 
 
-  const cambiarSesion = () => {
-    if (status !== "loading" && status === "authenticated") {
-      setName(session.user.name);
-      setImage(session.user.image);
-      setEmail(session.user.email);
-    } else {
-      router.push("/login");
-    }
-  };
+  // const cambiarSesion = () => {
+  //   if (status !== "loading" && status === "authenticated") {
+  //     setName(session.user.name);
+  //     setImage(session.user.image);
+  //     setEmail(session.user.email);
+  //   } 
+  // };
 
-  useEffect(() => {
-    cambiarSesion();
-  }, [status]);
+  // useEffect(() => {
+  //   cambiarSesion();
+  // }, [status]);
 
 
   return (
@@ -37,7 +35,7 @@ export default function Profile() {
       <div className={style.container}>
         <div className={style.image}>
         <Image 
-                        src={image} 
+                        src={session.user.image} 
                         alt="imagen-user" 
                         width={300} 
                         height={300}  
@@ -45,8 +43,8 @@ export default function Profile() {
         </div>
         
         <div className={style.info}>
-           <p>Nombre: {name}</p>
-           <p>Email: {email}</p>
+           <p>Nombre: {session.user.name}</p>
+           <p>Email: {session.user.email}</p>
         </div>
 
 
@@ -55,4 +53,22 @@ export default function Profile() {
       
     </Layout>
   );
+}
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context)
+
+  if (!session) return {
+    redirect: {
+      destination: '/login',
+      permanent: false
+    }
+  }
+
+  return {
+    props: {
+      session
+    }
+  }
+
 }

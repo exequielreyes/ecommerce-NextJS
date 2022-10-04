@@ -16,9 +16,9 @@ export default function Login() {
 
   return (
     <Layout title={"Login"}>
-      <div>
+      <div className={style.container}>
         <button
-          className={style.button}
+          className={style.buttonGitHub}
           onClick={() => {
             signIn("github");
           }}
@@ -26,7 +26,7 @@ export default function Login() {
           Sing In with GitHub
         </button>
         <button
-          className={style.button}
+          className={style.buttonGoogle}
           onClick={() => {
             signIn("google");
           }}
