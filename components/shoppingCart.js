@@ -40,6 +40,7 @@ function getTotal() {
             </div>
 
             <div className={style.total}>Total: ${getTotal()}</div>
+            
 
             </>
             }

@@ -6,6 +6,10 @@ import Image from "next/image";
 import Logo from "../public/img/ME-shop-logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
+
+
+
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 

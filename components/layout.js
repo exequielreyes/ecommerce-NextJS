@@ -20,6 +20,7 @@ export default function Layout({children, title}) {
 
             <div className={style.container}>{children}</div>
             <ShoppingCart />
+            
        </div> 
     )
 }

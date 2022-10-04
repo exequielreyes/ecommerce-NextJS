@@ -8,6 +8,7 @@ const AppContext = createContext({
     closeCart: () => {},
     addItemToCart: (item) => {},
     getNumberOfItems:() => {},
+    removeItenToCart:(item) => {},
 });
 
 
@@ -41,6 +42,17 @@ function handleAddItemToCart(item) {
 }
 
 
+//Eliminar producto del carrito
+function handleRemoveItemToCart(item){
+    const temp = [...items];
+    const carritoActualizado = temp.filter(product => product.id !== item.id)
+    setItems(carritoActualizado)
+    
+
+}
+
+
+
 function handleNumberOfItems() {
     const total = items.reduce((acc, item) => acc + item.qty , 0) //regresamos el acumulador de las sumas de los productos de la prop qty
 
@@ -57,7 +69,9 @@ return total;
             closeCart: handleCloseCart,
             addItemToCart: handleAddItemToCart,
             getNumberOfItems: handleNumberOfItems,
-        }}>{children}</AppContext.Provider>
+            removeItenToCart: handleRemoveItemToCart,
+        }}>{children}
+        </AppContext.Provider>
         
     )
 }

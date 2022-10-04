@@ -51,8 +51,31 @@
     gap: 10px;
     border-bottom: solid 1px #ccc;
     padding: 10px 0;
+    position: relative;
   }
 
+.eliminar{
+    all: unset;
+    position: absolute;
+    /* background: red; */
+    padding: 10px 10px; 
+    /* top: 0; */
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+}
+.eliminar:hover{
+    cursor: pointer;
+}
+.iconCart{
+    color: #333;
+    font-size: 20px;
+    transition: transform .2s;
+}
+
+.iconCart:hover{
+    transform: scale(1.2); 
+}
 
 @keyframes scale {
     from{

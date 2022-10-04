@@ -9,6 +9,9 @@ function handleClick() {
     cart.openCart();
 }
 
+
+
+
     return(
         <button className={style.button} onClick={handleClick} >Add to Cart</button>
     )

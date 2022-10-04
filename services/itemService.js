@@ -6,10 +6,10 @@ export async function  getItems() {
 
  }
 
- //mostrar los articulos
+ //cantidad de articulos a mostrar en el inicio
 
  export  async function getLatestItems() {
     const items = await getItems();
 
-    return items.slice(0, 3);
+    return items.slice(0, 6);
  }
