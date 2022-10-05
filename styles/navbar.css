@@ -120,15 +120,19 @@ border: 1px !important;
   top: 0;
   right: 0;
   width: 35px !important;
-  color: #ee456a;
+  color: #fff ;
     font-weight: 900;
 }
 
 
-.number-cart a:before{
-  content: "" !important;
+.number-cart a{
+  background-color: #ee456a;
+  border-radius: 50%;
 } 
 
+.number-cart a #text{
+  color: #333;
+}
 
 .fa-cart-shopping {
   /* font-size: 14px !important; */

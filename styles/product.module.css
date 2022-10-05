@@ -64,7 +64,15 @@
     margin-bottom: 5px;
 }
 
-
+.categoryProduct{
+     font-size: 14px;
+     color: #555;
+     position: absolute;
+     right: 0;
+     top: 0;
+     margin-right: 6px;
+     margin-top: 6px;
+}
 
 /* ----Imagenes de la tarjeta---------- */
 .imgCart{
@@ -115,6 +123,12 @@ justify-content: center !important;
     padding: 10px 0;
     position: relative;
   }
+
+  .imgItem span{
+    width: 100px !important;
+    height: 100px !important;
+  }
+
 
 .eliminar{
     all: unset;
