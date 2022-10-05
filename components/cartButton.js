@@ -13,6 +13,9 @@ function handleClick() {
 
 
     return(
-        <button className={style.button} onClick={handleClick} >Add to Cart</button>
+        <div className={style.buttonCart}>
+        <button className={style.button} onClick={handleClick} > Agregar al Carrito</button>
+
+        </div>
     )
 }

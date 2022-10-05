@@ -88,7 +88,7 @@ export default function Product({ item, showAs, qty}){
 
   return (
     <div className={style.item}>
-      <div>
+      <div className={style.imgCart}>
         {/* <Link href={`/store/${item.id}`} > */}
         <Link href={`/store/${convertToPath(item.title)}`}>
           <a>
@@ -97,6 +97,7 @@ export default function Product({ item, showAs, qty}){
               alt={item.description}
               width={150}
               height={150}
+              
             />
           </a>
         </Link>
@@ -108,7 +109,7 @@ export default function Product({ item, showAs, qty}){
         </h3>
       </div>
 
-      <div>${item.price}</div>
+      <div className={style.priceCart}>${item.price}</div>
       <div>
         <CartButton item={item} />
       </div>
