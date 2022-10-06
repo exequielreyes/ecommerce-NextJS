@@ -8,6 +8,8 @@ import Link from 'next/link'
 import styles from '../styles/Form.module.css';
 import Image from 'next/image'
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
+import { useFormik } from 'formik';
+import login_validate from '../lib/validate';
 
 
 export default function Login({session}) {
@@ -23,6 +25,18 @@ export default function Login({session}) {
 
 
   const [show, setShow] = useState(false)
+  const formik = useFormik({
+    initialValues: {
+        email: '',
+        password: ''
+    },
+        validate : login_validate,
+    onSubmit
+})
+
+async function onSubmit(values){
+    console.log(values)
+}
 
   return (
     <Layout title={"Login"}>
@@ -34,30 +48,36 @@ export default function Login({session}) {
             </div>
 
             {/* form */}
-            <form className='flex flex-col gap-5'>
-                <div className={styles.input_group}>
+            <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
+                <div className={`${styles.input_group} ${formik.errors.email && formik.touched.email ? 'border-rose-600' : ''}`}>
                     <input 
                     type="email"
                     name='email'
                     placeholder='Email'
                     className={styles.input_text}
+                    {...formik.getFieldProps('email')}
                     />
                         <span className='icon flex items-center px-4'>
                         <HiAtSymbol size={25} />
                     </span>
                 </div>
+                                {formik.errors.email && formik.touched.email ? <span className='text-rose-500'>{formik.errors.email}</span> : <></>}
 
-                <div className={styles.input_group}>
+
+                <div className={`${styles.input_group} ${formik.errors.password && formik.touched.password ? 'border-rose-600' : ''}`}>
                     <input 
                     type={`${show ? "text" : "password"}`}
                     name='password'
                     placeholder='password'
                     className={styles.input_text}
+                    {...formik.getFieldProps('password')}
                     />
                          <span className='icon flex items-center px-4' onClick={() => setShow(!show)}>
                         <HiFingerPrint size={25} />
                     </span>
                 </div>
+
+                {formik.errors.password && formik.touched.password ? <span className='text-rose-500'>{formik.errors.password}</span> : <></>}
 
                 {/* login buttons */}
                 <div className="input-button">
