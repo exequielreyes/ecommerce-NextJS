@@ -21,10 +21,9 @@ export default function Login({session}) {
   // if (status !== "loading" && status === "authenticated") {
   //   router.push("/");
   // }
-
-
-
+  
   const [show, setShow] = useState(false)
+  const router = useRouter()
   const formik = useFormik({
     initialValues: {
         email: '',
@@ -35,7 +34,15 @@ export default function Login({session}) {
 })
 
 async function onSubmit(values){
-    console.log(values)
+  const status = await signIn('credentials', {
+    redirect: false,
+    email: values.email,
+    password: values.password,
+    callbackUrl: "/"
+})
+
+if(status.ok) router.push(status.url)
+
 }
 
   return (
