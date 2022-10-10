@@ -3,12 +3,9 @@ import Image from "next/image";
 import style from "../styles/product.module.css";
 import { convertToPath } from "../lib/utils";
 import { FaTrash } from 'react-icons/fa';
-
-
-
-
+import { GrFormView } from 'react-icons/gr'
+import { useRouter } from "next/router"
 import CartButton from "./cartButton";
-
 import { useAppContext } from "./stateWrapper"
 
 
@@ -16,6 +13,7 @@ import { useAppContext } from "./stateWrapper"
 
 export default function Product({ item, showAs, qty}){
 
+    const router = useRouter()
     const cart = useAppContext();
 
 
@@ -111,8 +109,14 @@ export default function Product({ item, showAs, qty}){
       </div>
 
       <div className={style.priceCart}>${item.price}</div>
-      <div>
+      <div className={style.buttonCart}>
         <CartButton item={item} />
+
+        <button className={style.button}
+        onClick={() =>router.push(`/store/${convertToPath(item.title)}`)}
+        >
+        <GrFormView className={style.iconView}/>
+        </button>
       </div>
     </div>
   );

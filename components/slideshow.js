@@ -6,10 +6,11 @@ import "react-slideshow-image/dist/styles.css";
 const Slideshow = () => {
 	//Array of Images
 	const images = [
-		"img/banner1.jpg",
+		"img/banner.jpg",
 		"img/banner2.jpg",
 		"img/banner3.jpg",
-		"img/banner4.jpg",
+		"img/banner2.jpg",
+		
 		
 	];
 
@@ -21,7 +22,7 @@ const Slideshow = () => {
 		transitionDuration: 500,
 		infinite: true,
 		prevArrow: (
-			<div style={{ width: "30px", marginRight: "-30px", cursor: "pointer" }}>
+			<div style={{ width: "20px", marginRight: "-30px", cursor: "pointer" }}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -32,7 +33,7 @@ const Slideshow = () => {
 			</div>
 		),
 		nextArrow: (
-			<div style={{ width: "30px", marginLeft: "-30px", cursor: "pointer" }}>
+			<div style={{ width: "20px", marginLeft: "-30px", cursor: "pointer" }}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -53,7 +54,7 @@ const Slideshow = () => {
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center w-full h-full">
 						<img
-							className="w-3/4 object-cover rounded-lg shadow-xl"
+							className=" max-w-7xl  h-96 rounded-lg shadow-xl"
 							src={each}
 						/>
 					</div>

@@ -17,7 +17,7 @@ const [isOpen , setIsOpen] = useState(false);
 const [items , setItems] = useState([]);
 
 useEffect(() => {
-    const itemsLS = window.localStorage.getItem("itemsCart");
+    const itemsLS = window.localStorage.getItem("itemsCart") ?? "[]" ;
     console.log('itemsLS', itemsLS);
     setItems(JSON.parse(itemsLS))
 },[]);
@@ -79,7 +79,6 @@ function handleRemoveItemToCart(item){
 
 function handleNumberOfItems() {
     const total = items.reduce((acc, item) => acc + item.qty , 0) //regresamos el acumulador de las sumas de los productos de la prop qty
-
 return total;
 }
 
