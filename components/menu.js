@@ -30,7 +30,13 @@ export default function Menu() {
 
   const cambiarSesion = () => {
     if (status !== "loading" && status === "authenticated") {
-      setSesion(session.user.name);
+      if (!session.user.name){
+        setSesion(session.user.email);
+      } else {
+        setSesion(session.user.name);
+
+      }
+
       setLogot("title");
       setLogin("/profile");
     } 

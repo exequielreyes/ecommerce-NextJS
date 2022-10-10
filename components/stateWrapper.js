@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 
 
 const AppContext = createContext({
@@ -11,11 +11,26 @@ const AppContext = createContext({
     removeItenToCart:(item) => {},
 });
 
-
 export default function StateWrapper({children}) {
-    
+
 const [isOpen , setIsOpen] = useState(false);
 const [items , setItems] = useState([]);
+
+useEffect(() => {
+    const itemsLS = window.localStorage.getItem("itemsCart");
+    console.log('itemsLS', itemsLS);
+    setItems(JSON.parse(itemsLS))
+},[]);
+
+
+// useEffect(() => {
+//    window.localStorage.setItem("itemsCart", JSON.stringify(items));
+// }, [items])
+
+// useEffect(function holis(){
+// console.log("holis");
+// },[])
+
 
 function handleOpenCart(){
     setIsOpen(true);
@@ -28,17 +43,24 @@ function handleCloseCart() {
 function handleAddItemToCart(item) {
     const temp = [...items];
     const found = temp.find(product => product.id === item.id); //devuelve el primer elemento
-
+    console.log("temp",temp);
     if(found){
         found.qty++;
+        window.localStorage.setItem("itemsCart", JSON.stringify(temp));
+
     }else{
         item.qty = 1;
         temp.push(item)
+        window.localStorage.setItem("itemsCart", JSON.stringify(temp));
     }
 
-//Actualizar el estado
-    setItems([...temp]);
+    // window.localStorage.setItem("itemsCart", JSON.stringify(temp));
 
+//Actualizar el estado
+
+console.log("temp debajo  de actualizar estado", [...temp]);
+
+    setItems([...temp]);
 }
 
 
@@ -46,6 +68,8 @@ function handleAddItemToCart(item) {
 function handleRemoveItemToCart(item){
     const temp = [...items];
     const carritoActualizado = temp.filter(product => product.id !== item.id)
+    window.localStorage.setItem("itemsCart", JSON.stringify(carritoActualizado));
+
     setItems(carritoActualizado)
     
 

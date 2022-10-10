@@ -14,7 +14,7 @@ export default function Profile({session}) {
   // const [image, setImage] = useState();
   // const [email, setEmail] = useState("Email");
 
-
+console.log(session)
 
   // const cambiarSesion = () => {
   //   if (status !== "loading" && status === "authenticated") {
