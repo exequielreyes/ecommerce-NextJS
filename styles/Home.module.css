@@ -38,21 +38,14 @@
   align-items: center;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
+
+
+
+
+
+
+
 
 .title a {
   color: #0070f3;
@@ -136,37 +129,8 @@
 
 
 
-.footer{
-  height: 70px;
-  background-color: white;
-  position: relative;
-  margin-top: 20px;
-  border: none !important;
-}
 
-.footerLeft{
-  background-color: #2c3748;;
-  width: 100%;
-  /* float: left; */
-  padding-right: 14px;
-  color:#fff;
-  padding-top: 6px;
-  text-align: center;
-  font-size:11px ;
-  position: absolute;
-  bottom: 0;
-}
 
-.footerIcon{
-  display: flex;
-  padding: 5px 30px;
-  color: #333;
-  font-size: 20px;
-  width: 250px;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 15px;
-}
 
 
 

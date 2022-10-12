@@ -1,3 +1,10 @@
+
+.productos{
+    font-size: 22px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
 .items{
     display: flex;
     flex-wrap: wrap;
@@ -88,9 +95,120 @@ justify-content: center !important;
 
 
 
+/* -----------Nuevos estilos--------------- */
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #4ba9e9, #4ba9e9 50%, #fff 50%, #fff 100%) ;
+}
+.card{
+    display: flex;
+    /* justify-content: center; */
+    width: 300px;
+    height: 380px;
+    background-color: #fff;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: 0.8s ease-in-out
+}
+
+
+.card:hover{
+width: 600px;
+}
+
+.titleNuevo h3{
+    font-size: 1.2em;
+}
+
+
+.card .imgBox{
+    position: relative;
+    min-width: 290px;
+    width: 250px !important;
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s;
+}
+
+.card:hover .imgBox{
+    transform: rotate(-35deg);
+}
+
+.card .imgBox img{
+    width: 200px !important;
+    /* height: 85% !important; */
+    /* background-color: #3483fa; */
+}
+
+
+.card .details{
+    position: relative;
+    min-width: 300px;
+    background: #4ba9e9; 
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+}
+
+
+.card .details::before{
+content: "";
+position: absolute;
+left: 0;
+width: 0;
+height: 0;
+border-bottom: 10px solid transparent;
+border-top: 10px solid transparent;
+border-left: 10px solid #fff;
+
+
+}
+
+
+
+.card .details .descriptionNueva h4{
+font-size: 1.1em;
+}
+
+.card .details .descriptionNueva p{
+font-size: 0.8em;
+font-weight: 200;
+}
+
+
+.card .details .buy{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.card .details .buy .priceNuevo{
+   font-size: 1.6em;
+}
+
+.card .details .buy .button{
+    background: #fff;
+    padding: 0.5em 0.8em;
+}
+
+
+
+
+
+
+
 
 .page {
-    background-color: white;
+    background-color: rgb(192, 8, 8);
     padding: 40px;
     display: flex;
     bottom: 0 0 50x rgba(0,0,0,0.15);
@@ -103,6 +221,11 @@ justify-content: center !important;
 .info{
     font-size: 20px;
     margin:  10px 0;
+}
+
+.info h2{
+    font-size: 30px;
+    color: white;
 }
 
 .price{

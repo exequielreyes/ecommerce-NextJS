@@ -78,16 +78,24 @@ export default function Menu() {
           </li>
 
           <li>
+            <Link href="/store">
+              <a className="title">Todos los productos</a>
+            </Link>
+          </li>
+
+          <li>
             <Link href="/faq">
               <a className="title">Nosotros</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/store">
-              <a className="title">Todos los productos</a>
+            <Link href="/contact">
+              <a className="title">Contacto</a>
             </Link>
           </li>
+
+         
         </ul>
       </div>
 
@@ -110,7 +118,7 @@ export default function Menu() {
         {/* <a href="#" className={style.link} onClick={handleOpenCart}>
             Cart ({cart.getNumberOfItems()}){" "}
             </a> */}
-
+      
         <Link href={login}>
           <a className="title">{sesion}</a>
         </Link>

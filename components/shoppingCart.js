@@ -8,7 +8,12 @@ import Link from "next/link";
 
 
 
+
+
+
 export default function ShoppingCart(){
+
+
 
    const cart = useAppContext(); 
   
@@ -47,12 +52,15 @@ function getTotal() {
 
             <div className={style.total}>Total: ${getTotal()}</div>
             
-            <div className={style.containerButton}>
-                <Link href={"#"}>
-                    <a className={style.buttonCompra}>Procesar compra</a>
-                </Link>
 
+            <div className={style.containerButton}>
+                    <Link href='#'>
+                        <a className={style.buttonCompra}  >Procesar compra</a>
+                    </Link>
             </div>
+           
+           
+           
                 
             </>
             }

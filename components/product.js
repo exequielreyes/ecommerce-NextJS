@@ -25,35 +25,49 @@ export default function Product({ item, showAs, qty}){
 
   if (showAs === "Page") {
     return (
-      // <div>
-      //     <h2>{item.title}</h2>
-      // </div>
-      <div className={style.page}>
-        <div className={style.image}>
-          <Image
-            src={item.image}
-            alt={item.description}
-            width={500}
-            height={500}
-          />
-        </div>
-        <div className={style.info}>
-          <div>
-            <h2>{item.title}</h2>
-          </div>
+      
 
-          <div className={style.price}>${item.price}</div>
-          <div>${item.description}</div>
-          <div>
-            <CartButton item={item} />
+
+    <div className={style.body}>
+      <div className={style.card}>
+        <div className={style.imgBox}>
+            <Image
+                src={item.image}
+                alt={item.description}
+                width={500}
+                height={500}
+                
+              />
+        </div>
+        <div className={style.details}>
+          <div className={style.titleNuevo}>
+              <h3>{item.title}</h3>
+          </div>
+          <div className={style.descriptionNueva}>
+            <h4>Descripcion</h4>
+            <p>{item.description}</p>
+          </div>
+          <div className={style.buy}>
+              <div className={style.priceNuevo}>
+                  <span>${item.price}</span>
+              </div>
+
+              <div className={style.button}>
+              <CartButton item={item}  />
+              </div>
+
           </div>
         </div>
       </div>
+    </div>
+
+
     );
   }
 
   if (showAs === "ListItem") {
     return (
+      
       <div className={style.listItem}>
         <div className={style.imgItem}>
           <Image
@@ -81,6 +95,7 @@ export default function Product({ item, showAs, qty}){
           </button>
         </div>
       </div>
+      
     );
   }
 

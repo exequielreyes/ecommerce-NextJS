@@ -23,12 +23,12 @@
   display: flex;
   padding: 0;
   align-items: center;
-  margin-left: 50px;
+  margin-left: 27px;
   /* margin-top: 70px; */
 }
 .navigation-menu li {
   list-style-type: none;
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
 }
 
 .navigation-menu li .title {

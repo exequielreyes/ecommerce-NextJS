@@ -9,7 +9,7 @@ import styleItems from "../../styles/product.module.css"
 export default function Index({items}) {
     return(
        <Layout title={"Store"} >
-        <h1>Store</h1>
+        <h1 className={styleItems.productos}>Productos</h1>
         <div className={styleItems.items} >
 
         {
