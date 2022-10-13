@@ -6,6 +6,8 @@ import Image from "next/image";
 import Logo from "../public/img/ME-shop-logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { GrLogout } from 'react-icons/gr'
+
 
 
 
@@ -114,23 +116,29 @@ export default function Menu() {
         </div>
       </div>
 
-      <div>
-        {/* <a href="#" className={style.link} onClick={handleOpenCart}>
-            Cart ({cart.getNumberOfItems()}){" "}
-            </a> */}
+      <div className="conteiner-session navigation-menu">
+        <ul>
+
+          <li>
+          <Link href={login}>
+              <a className="title">{sesion}</a>
+            </Link>
+
+          </li>
+          <li>
+              <button
+                  className={logot}
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  <GrLogout className="logoutIcon"/>
+                  Cerrar Sesion
+                </button>
+          </li>
+        </ul>
       
-        <Link href={login}>
-          <a className="title">{sesion}</a>
-        </Link>
         
-        <button
-          className={logot}
-          onClick={() => {
-            signOut();
-          }}
-        >
-          Cerrar Sesion
-        </button>
       </div>
     </nav>
   );

@@ -1,18 +1,28 @@
 // Make sure to run npm install @formspree/react
 // For more help visit https://formspr.ee/react-help
+import Image from "next/image";
+
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 function ContactForm() {
   const [state, handleSubmit] = useForm("mrgdlayn");
   if (state.succeeded) {
-      return <div className='text-center font-bold'><p>Gracias por comunicarte con nosotros!</p></div> 
+      return <div className='text-center  '><p className=" mb-8 text-lg ">Gracias por comunicarte con nosotros! 
+           
+           </p>
+           <Image 
+            src="/img/descarga.png"
+            width={400}
+            height={400}
+            />
+           </div> 
   }
   return (
       <section className='py-10 bg-white-100 flex justify-around'>
 
       <div className='w-1/2 mx-4' >
 
-        <h2 className=' text-start  font-bold text-4xl'>Contactame</h2>
+        <h2 className=' text-start  font-nova   text-4xl'>Contactame</h2>
 
         <p className='text-start   text-2xl mt-5'>Sientase libre de consultar cualquier sugerencia en el siguiente formulario</p>
       
@@ -21,7 +31,7 @@ function ContactForm() {
 
 
         <div>
-            <label htmlFor="name" className='text-sm font-bold'>
+            <label htmlFor="name" className='text-base font-bold'>
                 Nombre
             </label>
         </div>  
@@ -48,7 +58,7 @@ function ContactForm() {
 
 
         <div>
-            <label htmlFor="email" className='text-sm font-bold'>
+            <label htmlFor="email" className='text-base font-bold'>
                 Email
             </label>
         </div>  
@@ -72,7 +82,7 @@ function ContactForm() {
             </div> 
 
         <div>
-            <label htmlFor="message" className='text-sm font-bold'>
+            <label htmlFor="message" className='text-base font-bold'>
                 Mensaje
             </label>
         </div> 

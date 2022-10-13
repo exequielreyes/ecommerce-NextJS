@@ -14,8 +14,8 @@ import { AiFillGithub, AiFillFacebook, AiFillInstagram } from  'react-icons/ai'
 export default function FAQ(){ 
 return(
    
-    <Layout title={"Faq"}>
-      <h2 className={style.nosotros}>Nosotros</h2>
+    <Layout title={"Nosotros"}>
+    
     
     <div className={style.body}>
         
@@ -25,24 +25,24 @@ return(
             <div className={style.img}>
               <img
               
-              src="/img/img1.jpg"
+              src="/img/persona1.jpeg"
               
               className={style.prueba}
 
               />
             </div>
                 <h4>Cortes, Roberto Misael</h4>
-                <h6>Software Enginer</h6>
+                <h6>Estudiante de Ingenieria en Sistemas</h6>
                 <p> Lorem ipsum dolor sit amet consectetur </p>
           </div>
           <div className={style.links}>
-            <Link href="https://www.instagram.com/exequiel_reyes16/">
+            <Link href="https://github.com/Misael-Corts">
               <a> <AiFillGithub/>  </a>
             </Link>
-            <Link href="#">
+            <Link href="https://www.facebook.com/misael.cortes.39/">
               <a> <AiFillFacebook/>  </a>
             </Link>
-            <Link href="#">
+            <Link href="https://www.instagram.com/misaelcortes32/?hl=es-la">
               <a> <AiFillInstagram/>  </a>
             </Link>
 
@@ -56,24 +56,24 @@ return(
             <div className={style.img}>
               <img
               
-              src="/img/persona.jpg"
+              src="/img/persona2.jpeg"
               
               className={style.prueba}
 
               />
             </div>
                 <h4>Reyes, Jonathan Exequiel</h4>
-                <h6>Ingenieria en Sistemas</h6>
+                <h6>Estudiante de Ingenieria en Sistemas</h6>
                 <p> Lorem ipsum dolor sit amet consectetur </p>
           </div>
           <div className={style.links}>
-            <Link href="https://www.instagram.com/exequiel_reyes16/">
+            <Link href="https://github.com/exequielreyes">
               <a> <AiFillGithub/>  </a>
             </Link>
-            <Link href="#">
+            <Link href="https://www.facebook.com/exequiel.lasmalvinas.1/">
               <a> <AiFillFacebook/>  </a>
             </Link>
-            <Link href="#">
+            <Link href="https://www.instagram.com/exequiel_reyes16/">
               <a> <AiFillInstagram/>  </a>
             </Link>
 

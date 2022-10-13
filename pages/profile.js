@@ -43,8 +43,8 @@ console.log(session)
         </div>
         
         <div className={style.info}>
-           <p>Nombre: {session.user.name}</p>
-           <p>Email: {session.user.email}</p>
+           <p><b>Nombre:</b> {session.user.name}</p>
+           <p><b>Email:</b> {session.user.email}</p>
         </div>
 
 

@@ -6,16 +6,10 @@ import Link from "next/link";
 
 
 
-
-
-
-
-
 export default function ShoppingCart(){
 
 
-
-   const cart = useAppContext(); 
+const cart = useAppContext(); 
   
 
 function handleCloseCart() {
@@ -55,7 +49,7 @@ function getTotal() {
 
             <div className={style.containerButton}>
                     <Link href='#'>
-                        <a className={style.buttonCompra}  >Procesar compra</a>
+                        <a className={style.buttonCompra}>Procesar compra</a>
                     </Link>
             </div>
            

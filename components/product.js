@@ -11,6 +11,7 @@ import { useAppContext } from "./stateWrapper"
 
 
 
+
 export default function Product({ item, showAs, qty}){
 
     const router = useRouter()
@@ -81,7 +82,7 @@ export default function Product({ item, showAs, qty}){
           <h4>
             <div>{item.title}</div>
           </h4>
-          <div>{item.price}</div>
+          <div>${item.price}</div>
 
           {qty === 0 ? "" : <div>{qty} Unidad </div>}
           {qty === 0 ? "" : <div>Subtotal: ${qty * item.price}</div>}

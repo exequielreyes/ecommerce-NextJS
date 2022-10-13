@@ -6,7 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 const Slideshow = () => {
 	//Array of Images
 	const images = [
-		"img/banner.jpg",
+		"img/banner3.jpg",
 		"img/banner2.jpg",
 		"img/banner3.jpg",
 		"img/banner2.jpg",

@@ -1,8 +1,8 @@
 
 .productos{
     font-size: 22px;
-    color: #777;
-    margin-bottom: 10px;
+    color: #444;
+    margin-bottom: 15px;
 }
 
 .items{
@@ -53,7 +53,7 @@
 
 .name{
     font-size: 22px;
-    color: #777;
+    color: #444;
     margin-bottom: 10px;
    
 }
@@ -90,7 +90,7 @@ justify-content: center !important;
 .priceCart{
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #444;
 }
 
 
@@ -132,12 +132,12 @@ width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.8s;
+    /* transition: 0.8s; */
 }
 
-.card:hover .imgBox{
+/* .card:hover .imgBox{
     transform: rotate(-35deg);
-}
+} */
 
 .card .imgBox img{
     width: 200px !important;
@@ -304,7 +304,15 @@ font-weight: 200;
     margin-right: 40px;
     color: #444;
     
+    transition: transform .2s;
 }
+
+.iconView:hover{
+    transform: scale(1.2); 
+}
+
+
+
 
 
 

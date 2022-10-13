@@ -16,7 +16,7 @@ function handleClick() {
     return(
         <div className={style.buttonCart}>
         <button className={style.button} onClick={handleClick}>
-        <FaCartArrowDown/>
+        <FaCartArrowDown className="iconArrow" />
         </button>
 
         </div>
