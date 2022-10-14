@@ -16,22 +16,6 @@ export default function Home({ items }) {
      
 
     <Layout> 
-      {/* <div className={styles.banner}>
-
-        <div className={styles.bannerBackground}>  
-        
-        <div className={styles.bannerInfo}>
-          <h2>Shop the Summer 2022 Collection</h2>
-          <p>
-          Level up your comfort this season with our new Winter Collection
-                — all new joggers, beanies, drinkware, and for the first time
-                ever, Octocookie cutters!
-          </p>
-        </div>
-        
-        </div>
-      </div> */}
-
     <Herosection />
 
       <div className={styleProduct.contenedorNombre}>

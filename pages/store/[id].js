@@ -11,12 +11,13 @@ export default function ProductPage({ productInfo }) {
     );
 }
 
+//nos permite generar la ruta dinamicas para cada uno de nuestros elementos
 export async function getStaticPaths() {
-    const paths = await getPathsFromIds();
+    const paths = await getPathsFromIds(); //ya tenemos un arreglo de objetos
 
     return {
-        paths: paths,
-        fallback: false,
+        paths: paths, //el nombre de la propiedad tiene que ser path
+        fallback: false, //si la ruta no existe no manda a una pagina 404
     };
 }
 

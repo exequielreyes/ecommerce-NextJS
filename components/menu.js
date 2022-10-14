@@ -71,6 +71,8 @@ export default function Menu() {
         </svg>
       </button>
 
+      {/* aca tenemos todas las secciones encerradas en un link */}
+
       <div className="navigation-menu">
         <ul>
           <li className="active">

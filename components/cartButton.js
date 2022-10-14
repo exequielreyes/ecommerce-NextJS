@@ -5,6 +5,7 @@ export default function CartButton({item}) {
 
 const cart = useAppContext();
 
+//llamamos el metododo de item
 function handleClick() {
     cart.addItemToCart(item);
     cart.openCart();

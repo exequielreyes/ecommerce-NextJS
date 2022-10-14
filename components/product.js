@@ -11,8 +11,8 @@ import { useAppContext } from "./stateWrapper"
 
 
 
-
-export default function Product({ item, showAs, qty}){
+//con item mostramos la informacion que necesitamos
+export default function Product({ item, showAs, qty }){
 
     const router = useRouter()
     const cart = useAppContext();
@@ -104,8 +104,8 @@ export default function Product({ item, showAs, qty}){
     <div className={style.item}>
         <div className={style.categoryProduct}>{item.category} </div>
       <div className={style.imgCart}>
-        {/* <Link href={`/store/${item.id}`} > */}
-        <Link href={`/store/${convertToPath(item.title)}`}>
+         {/* <Link href={`/store/${item.id}`} >  */}
+        <Link href={`/store/${convertToPath(item.title)}`}> 
           <a>
             <Image
               src={item.image}

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function ShoppingCart(){
 
-
+//podemos acceder a los metodos
 const cart = useAppContext(); 
   
 
