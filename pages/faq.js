@@ -33,7 +33,7 @@ return(
             </div>
                 <h4>Cortes, Roberto Misael</h4>
                 <h6>Estudiante de Ingenieria en Sistemas</h6>
-                <p> Lorem ipsum dolor sit amet consectetur </p>
+                <p> Seminario de actualizacion II </p>
           </div>
           <div className={style.links}>
             <Link href="https://github.com/Misael-Corts">
@@ -64,7 +64,7 @@ return(
             </div>
                 <h4>Reyes, Jonathan Exequiel</h4>
                 <h6>Estudiante de Ingenieria en Sistemas</h6>
-                <p> Lorem ipsum dolor sit amet consectetur </p>
+                <p> Seminario de actualizacion II </p>
           </div>
           <div className={style.links}>
             <Link href="https://github.com/exequielreyes">

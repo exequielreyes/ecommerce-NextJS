@@ -11,7 +11,7 @@ import { useFormik } from 'formik';
 import login_validate from '../lib/validate';
 
 
-export default function Login({session}) {
+export default function Login({ session }) {
   // const { data: session, status } = useSession();
   // const router = useRouter();
 
@@ -113,27 +113,6 @@ if(status.ok) router.push(status.url)
     </Layout>
   );
 }
-
-
-
-// <div className={style.container}>
-// <button
-//   className={style.buttonGitHub}
-//   onClick={() => {
-//     signIn("github");
-//   }}
-// >
-//   Sing In with GitHub
-// </button>
-// <button
-//   className={style.buttonGoogle}
-//   onClick={() => {
-//     signIn("google");
-//   }}
-// >
-//   Sing In with Google
-// </button>
-// </div>
 
 
 export const getServerSideProps = async (context) => {

@@ -32,6 +32,7 @@ export default function Product({ item, showAs, qty }){
     <div className={style.body}>
       <div className={style.card}>
         <div className={style.imgBox}>
+          <div className={style.categoryNueva}>{item.category}</div>
             <Image
                 src={item.image}
                 alt={item.description}

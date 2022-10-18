@@ -14,7 +14,7 @@ const AutocompleteItem = ({title, image, price }) => {
             <img src={image} alt={title} className='w-12 h-12 object-contain' height={100} width={100} />
             <div>
               <h3 className='text-sm font-semibold'>{title}</h3>
-              <p className='text-xs text-red-600'>{price}</p>
+              <p className='text-xs text-red-600'>${price}</p>
             </div>
           </a>
         </Link>
@@ -27,19 +27,19 @@ const AutocompleteItem = ({title, image, price }) => {
  export default function Search(props) {
 
     const [autocompleteState, setAutocompleteState] = useState({
-        collections: [],
+        collections: [], //tenemos todas las colecciones
         isOpen: false
       })
     
     
       const autocomplete = useMemo(() => createAutocomplete({
         placeholder: 'Busca el producto',
-        onStateChange: ({ state }) => setAutocompleteState(state),
+        onStateChange: ({ state }) => setAutocompleteState(state), //se ejecuta cada vez que se actualiza el estado con setAuto..
         getSources: () => [{
           sourceId: 'offers-next-api',
-          getItems: ({ query }) => {
+          getItems: ({ query }) => {  //aqui recuperamos los datos para esta fuente
             if (!!query) {
-              return fetch(`/api/search?q=${query}`)
+              return fetch(`/api/search?q=${query}`) //si tenemos un valor
                 .then(res => res.json())
             }
           }
@@ -47,10 +47,10 @@ const AutocompleteItem = ({title, image, price }) => {
         ...props
       }), [props])
 
-
+//creamos las referencias de nuestro elementos que vamos a tener que pasar al autocomplete
       const formRef = useRef(null)
       const inputRef = useRef(null)
-      const panelRef = useRef(null)
+      const panelRef = useRef(null) //donde se dibujar los resultados de la busqueda
     
       const formProps = autocomplete.getFormProps({
         inputElement: inputRef.current

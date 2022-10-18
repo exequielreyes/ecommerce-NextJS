@@ -102,7 +102,7 @@ function ContactForm() {
         errors={state.errors}
       />
       </div>  
-      <button type="submit" disabled={state.submitting} className="inline-block self-end bg-indigo-500 hover:bg-indigo-600 text-white font-bold px-6 py-4 rounded-lg text-sm">
+      <button type="submit" disabled={state.submitting} className="inline-block self-end  bg-violet-500   hover:bg-indigo-600 text-white font-bold px-6 py-4 rounded-lg text-sm">
         Enviar
       </button>
       
