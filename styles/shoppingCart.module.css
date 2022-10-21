@@ -34,8 +34,8 @@
 
 
 .close {
-    background-color: #ffd500;
-    color: black;
+    background-color: #0a6fe5;
+    color: white;
     font-weight: bold;
     border: none;
     font-size: 16px;
@@ -52,7 +52,7 @@
 
 
 .buttonCompra {
-    background-color: #3483fa;
+    background-color: #0a6fe5;
     color: white;
     font-weight: bold;
     border: none;

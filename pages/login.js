@@ -12,15 +12,7 @@ import login_validate from '../lib/validate';
 
 
 export default function Login({ session }) {
-  // const { data: session, status } = useSession();
-  // const router = useRouter();
 
-  // const [login, setLogin] = useState("signIn");
-
-  // if (status !== "loading" && status === "authenticated") {
-  //   router.push("/");
-  // }
-  
   const [show, setShow] = useState(false)
   const router = useRouter()
   const formik = useFormik({

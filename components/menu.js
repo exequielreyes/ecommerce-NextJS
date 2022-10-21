@@ -1,17 +1,11 @@
 import Link from "next/link";
 import { useAppContext } from "./stateWrapper";
-// import style from '../styles/menu.module.css';
 import Search from "../components/search";
 import Image from "next/image";
 import Logo from "../public/img/ME-shop-logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { GrLogout } from 'react-icons/gr'
-
-
-
-
-
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
@@ -36,7 +30,6 @@ export default function Menu() {
         setSesion(session.user.email);
       } else {
         setSesion(session.user.name);
-
       }
 
       setLogot("title");

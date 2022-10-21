@@ -7,27 +7,6 @@ import Image from "next/image";
 
 
 export default function Profile({session}) {
-  
-  // const { data: session, status } = useSession();
-  //  const router = useRouter();
-  // const [name, setName] = useState("Nombre");
-  // const [image, setImage] = useState();
-  // const [email, setEmail] = useState("Email");
-
-console.log(session)
-
-  // const cambiarSesion = () => {
-  //   if (status !== "loading" && status === "authenticated") {
-  //     setName(session.user.name);
-  //     setImage(session.user.image);
-  //     setEmail(session.user.email);
-  //   } 
-  // };
-
-  // useEffect(() => {
-  //   cambiarSesion();
-  // }, [status]);
-
 
   return (
     <Layout title={"Profile"}>
